@@ -1,22 +1,25 @@
-import Link from "next/link"
-import { Search, Heart, ShoppingBag } from 'lucide-react'
-import Image from "next/image"
+import Link from "next/link";
+import { Search, Heart, ShoppingBag } from "lucide-react";
+import Image from "next/image";
 
 export default function Header() {
   return (
     <header className=" top-0 z-50 w-full bg-white">
       {/* Top utility nav */}
       <div className="hidden items-center justify-between bg-gray-100 px-14 py-1 text-xs md:flex">
-      <Link href="/jordan" className="flex-shrink-0">
-            <Image
-              src="/assets/jordenLogo.png"
-              alt="Jordan"
-              width={24}
-              height={24}
-              className="h-6 w-auto"
-            />
-          </Link>
-        <Link href="#main" className="text-black hover:text-gray-900 bg-white px-2 py-1">
+        <Link href="/jordan" className="flex-shrink-0">
+          <Image
+            src="/assets/jordenLogo.png"
+            alt="Jordan"
+            width={24}
+            height={24}
+            className="h-6 w-auto"
+          />
+        </Link>
+        <Link
+          href="#main"
+          className="text-black hover:text-gray-900 bg-white px-2 py-1"
+        >
           Skip to main content
         </Link>
         <div className="flex items-center space-x-4">
@@ -129,12 +132,11 @@ export default function Header() {
             aria-label="Shopping bag"
           >
             <Link href="/cart">
-            <ShoppingBag className="h-5 w-5" />
+              <ShoppingBag className="h-5 w-5" />
             </Link>
           </button>
         </div>
       </div>
     </header>
-  )
+  );
 }
-

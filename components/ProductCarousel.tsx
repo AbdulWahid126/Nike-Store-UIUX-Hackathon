@@ -83,9 +83,9 @@ export default function ProductCarousel() {
           {products.map((product) => (
             <Card
               key={product.id}
-              className="flex-none w-[415px] snap-start border-none duration-200"
+              className="flex-none w-[315px] sm:w-[415px] snap-start border-none duration-200"
             >
-              <CardContent className="p-0 2xl:w-[1440px] ">
+              <CardContent className="p-0 ">
                 <Link href={`/product/${product.id}`}>
                   <div className="bg-[#f5f5f5] aspect-square relative">
                     <Image
