@@ -27,14 +27,14 @@ const products: Product[] = [
     name: 'Nike Air Max Pulse',
     category: "Men's Shoes",
     price: 13995,
-    imageUrl: '/assets/white-shoes.png?height=400&width=400',
+    imageUrl: '/assets/gray-shoes.png?height=400&width=400',
   },
   {
     id: '3',
     name: 'Nike Air Max 97 SE',
     category: "Men's Shoes",
     price: 16995,
-    imageUrl: '/assets/gray-shoes.png?height=400&width=400',
+    imageUrl: '/assets/white-shoes.png?height=400&width=400',
   },
 ]
 

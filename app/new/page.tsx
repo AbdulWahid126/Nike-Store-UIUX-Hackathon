@@ -1,85 +1,113 @@
-import Image from "next/image"
-import Link from "next/link"
+import { Sidebar } from "@/components/Sidebar"
+import { ProductCard } from "@/components/ProductCard" 
 import { Button } from "@/components/ui/button"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+import { SlidersHorizontal } from 'lucide-react'
 
-export default function NewProducts() {
+const products = [
+  {
+    name: "Nike Air Force 1 Mid '07",
+    category: "Men's Shoes",
+    colors: 1,
+    price: "₹ 10,795.00",
+    image: "/assets/Rectangle.png?height=400&width=400",
+    isNew: true
+  },
+  {
+    name: "Nike Court Vision Low Next Nature",
+    category: "Men's Shoes",
+    colors: 1,
+    price: "₹ 4,995.00",
+    image: "/assets/Rectangle (1).png?height=400&width=400",
+    isNew: true
+  },
+  {
+    name: "Nike Air Force 1 PLT.AF.ORM",
+    category: "Women's Shoes",
+    colors: 1,
+    price: "₹ 8,695.00",
+    image: "/assets/Rectangle (2).png?height=400&width=400",
+    isNew: true
+  },
+  {
+    name: "Nike Air Force 3 PLT.AF.ORM",
+    category: "Women's Shoes",
+    colors: 1,
+    price: "₹ 9,655.00",
+    image: "/assets/Rectangle (3).png?height=400&width=400",
+    isNew: true
+  },
+  {
+    name: "Nike Air Force 4 PLT.AF.ORM",
+    category: "Women's Shoes",
+    colors: 1,
+    price: "₹ 2,695.00",
+    image: "/assets/Rectangle (4).png?height=400&width=400",
+    isNew: true
+  },
+  {
+    name: "Nike Air Force 5 PLT.AF.ORM",
+    category: "Women's Shoes",
+    colors: 1,
+    price: "₹ 5,695.00",
+    image: "/assets/Rectangle (5).png?height=400&width=400",
+    isNew: true
+  },
+  {
+    name: "Nike Air Force 6 PLT.AF.ORM",
+    category: "Women's Shoes",
+    colors: 1,
+    price: "₹ 3,695.00",
+    image: "/assets/Rectangle (6).png?height=400&width=400",
+    isNew: true
+  },
+  {
+    name: "Nike Air Force 7 PLT.AF.ORM",
+    category: "Women's Shoes",
+    colors: 1,
+    price: "₹ 6,695.00",
+    image: "/assets/Rectangle (7).png?height=400&width=400",
+    isNew: true
+  },
+  {
+    name: "Nike Air Force 8 PLT.AF.ORM",
+    category: "Women's Shoes",
+    colors: 1,
+    price: "₹ 7,695.00",
+    image: "/assets/Rectangle (8).png?height=400&width=400",
+    isNew: true
+  },
+  // Add more products as needed
+]
+
+export default function Page() {
   return (
-    <div className="container px-4 py-8 lg:ml-12">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-2xl font-bold">New (500)</h1>
-        <div className="flex gap-4">
-          <Button variant="outline" className="hidden md:flex">
-            Hide Filters
-          </Button>
-          <Select>
-            <SelectTrigger className="w-[160px]">
-              <SelectValue placeholder="Sort By" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="featured">Featured</SelectItem>
-              <SelectItem value="newest">Newest</SelectItem>
-              <SelectItem value="price-high">Price: High-Low</SelectItem>
-              <SelectItem value="price-low">Price: Low-High</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-      </div>
-      <div className="grid md:grid-cols-[240px_1fr] gap-8">
-        <aside className="hidden md:block space-y-6">
-          <div>
-            <h3 className="font-semibold mb-4">Categories</h3>
-            <div className="space-y-2">
-              <Button variant="ghost" className="w-full justify-start">Shoes</Button>
-              <Button variant="ghost" className="w-full justify-start">Sports Bras</Button>
-              <Button variant="ghost" className="w-full justify-start">Tops & T-Shirts</Button>
-              <Button variant="ghost" className="w-full justify-start">Hoodies & Sweatshirts</Button>
-              <Button variant="ghost" className="w-full justify-start">Jackets</Button>
+    <div className="flex min-h-screen pl-10 max-sm:pl-0 flex-col">
+      <main className="flex-1">
+        <div className="container px-4 py-6">
+          <div className="flex items-center justify-between">
+            <h1 className="text-2xl font-bold">New (500)</h1>
+            <div className="flex items-center gap-4">
+              <Button variant="outline" size="sm">
+                <SlidersHorizontal className="mr-2 h-4 w-4" />
+                Hide Filters
+              </Button>
+              <Button variant="outline" size="sm">
+                Sort By
+              </Button>
             </div>
           </div>
-          <div>
-            <h3 className="font-semibold mb-4">Gender</h3>
-            <div className="space-y-2">
-              <Button variant="ghost" className="w-full justify-start">Men</Button>
-              <Button variant="ghost" className="w-full justify-start">Women</Button>
-              <Button variant="ghost" className="w-full justify-start">Unisex</Button>
-            </div>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-4">Shop By Price</h3>
-            <div className="space-y-2">
-              <Button variant="ghost" className="w-full justify-start">Under ₹ 2,500.00</Button>
-              <Button variant="ghost" className="w-full justify-start">₹ 2,501.00 - ₹ 7,500.00</Button>
-              <Button variant="ghost" className="w-full justify-start">Over ₹ 7,500.00</Button>
-            </div>
-          </div>
-        </aside>
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <Link key={i} href={`/products/${i + 1}`} className="group">
-              <div className="relative aspect-square mb-2">
-                <Image
-                  src={`/assets/Ractangle.png?height=400&width=400&text=Product${i + 1}`}
-                  alt={`Product ${i + 1}`}
-                  className="object-cover rounded-lg"
-                  fill
-                />
+          <div className="mt-6 flex gap-8">
+            <Sidebar />
+            <div className="flex-1">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {products.map((product) => (
+                  <ProductCard key={product.name} {...product} />
+                ))}
               </div>
-              <div>
-                <h3 className="font-medium">Nike Air Force 1 07</h3>
-                <p className="text-sm text-muted-foreground">Mens Shoes</p>
-                <p className="mt-1">MRP: ₹ 7,995.00</p>
-              </div>
-            </Link>
-          ))}
+            </div>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   )
 }
