@@ -92,7 +92,7 @@ export default function GearUp() {
               </div>
             </div>
             </div>
-            <div className='flex w-[640px] px-5 justify-end'>
+            <div className='hidden sm:flex w-[640px] px-5 justify-end'>
             <div className="flex items-center gap-4">
               <Link href="/shop/womens" className="text-sm font-medium">
                 Shop Womens
