@@ -1,39 +1,37 @@
-import Link from "next/link"
-import { Card, CardContent } from "@/components/ui/card"
+import Link from 'next/link'
+import Image from 'next/image'
+import { Product } from '@/lib/types'
 
 interface ProductCardProps {
-  name: string
-  category: string
-  colors: number
-  price: string
-  image: string
-  isNew?: boolean
+  product: Product
 }
 
-export function ProductCard({ name, category, colors, price, image, isNew = false }: ProductCardProps) {
+export function ProductCard({ product }: ProductCardProps) {
   return (
-    <Card className="rounded-none border-none shadow-none">
-      <CardContent className="p-0">
-        <Link href="#" className="group block">
-          <div className="aspect-square overflow-hidden bg-muted">
-            <img
-              src={image}
-              alt={name}
-              className="h-full w-full object-cover transition-transform group-hover:scale-105"
-            />
+    <Link href={`/products/${product.id}`} className="group">
+      <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100">
+        <Image
+          src={product.images[0]}
+          alt={product.name}
+          width={600}
+          height={600}
+          className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+        />
+        {product.tag && (
+          <div className="absolute top-2 left-2 bg-white px-2 py-1 text-xs font-medium">
+            {product.tag}
           </div>
-          <div className="mt-2 space-y-1">
-            {isNew && (
-              <p className="text-sm text-orange-600">Just In</p>
-            )}
-            <h3 className="font-medium">{name}</h3>
-            <p className="text-sm text-muted-foreground">{category}</p>
-            <p className="text-sm text-muted-foreground">{colors} Colour</p>
-            <p className="font-medium">MRP : {price}</p>
-          </div>
-        </Link>
-      </CardContent>
-    </Card>
+        )}
+      </div>
+      <div className="mt-4 space-y-1">
+        <h3 className="text-sm font-medium">{product.name}</h3>
+        <p className="text-sm text-gray-500">{product.category}</p>
+        <div className="flex items-center justify-between">
+          <p className="text-sm text-gray-900">₹ {product.price.toLocaleString()}</p>
+          <p className="text-sm text-gray-500">{product.colors} {product.colors === 1 ? 'Color' : 'Colors'}</p>
+        </div>
+      </div>
+    </Link>
   )
 }
 

@@ -112,7 +112,7 @@ export default function SignUp() {
         </Button>
         <p className="text-sm text-center">
           Already a Member?{" "}
-          <Link href="/login" className="underline">
+          <Link href="/signIn" className="underline">
             Sign In
           </Link>
         </p>

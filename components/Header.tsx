@@ -23,7 +23,7 @@ export default function Header() {
           Skip to main content
         </Link>
         <div className="flex items-center space-x-4">
-          <Link href="/stores" className="text-black hover:text-gray-900">
+          <Link href="/products" className="text-black hover:text-gray-900">
             Find a Store
           </Link>
           <span className="text-gray-300">|</span>
@@ -35,7 +35,7 @@ export default function Header() {
             Join Us
           </Link>
           <span className="text-gray-300">|</span>
-          <Link href="/join" className="text-black hover:text-gray-900">
+          <Link href="/signIn" className="text-black hover:text-gray-900">
             Sign In
           </Link>
         </div>
@@ -60,7 +60,7 @@ export default function Header() {
           <ul className="flex items-center space-x-6">
             <li>
               <Link
-                href="/new"
+                href="/products"
                 className="text-sm font-medium text-gray-900 hover:text-gray-600"
               >
                 New & Featured
