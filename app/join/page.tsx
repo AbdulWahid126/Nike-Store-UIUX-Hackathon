@@ -71,6 +71,7 @@ export default function SignUp() {
                 <SelectItem value="in">India</SelectItem>
                 <SelectItem value="us">United States</SelectItem>
                 <SelectItem value="uk">United Kingdom</SelectItem>
+                <SelectItem value="pak">Pakistan</SelectItem>
               </SelectContent>
             </Select>
           </div>

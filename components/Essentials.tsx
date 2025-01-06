@@ -28,7 +28,7 @@ export function Essentials() {
           {categories.map((category) => (
             <div
               key={category.id}
-              className="group relative w-[250px] h-[350px] lg:w-[410px] overflow-hidden rounded-sm"
+              className="group relative w-auto h-[350px] lg:w-[410px] md:h-[440px] lg:h-[540px] overflow-hidden rounded-sm"
             >
               <Image
                 src={category.image}

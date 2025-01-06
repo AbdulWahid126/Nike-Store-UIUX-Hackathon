@@ -29,7 +29,7 @@ interface Category {
   
   export function Categories() {
     return (
-      <nav className="hidden lg:block">
+      <nav className="hidden md:block">
         <div className="container sm:w-[880] mx-auto px-4 py-8">
           <div className="grid grid-cols-4 gap-8">
             {categories.map((category) => (

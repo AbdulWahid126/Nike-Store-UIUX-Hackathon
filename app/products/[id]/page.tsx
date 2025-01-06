@@ -1,19 +1,19 @@
-import Image from 'next/image'
-import { notFound } from 'next/navigation'
-import { products } from '@/lib/data'
-import { Button } from '@/components/ui/button'
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { products } from "@/lib/data";
+import { Button } from "@/components/ui/button";
 
 interface ProductPageProps {
   params: {
-    id: string
-  }
+    id: string;
+  };
 }
 
 export default function ProductPage({ params }: ProductPageProps) {
-  const product = products.find((p) => p.id === params.id)
+  const product = products.find((p) => p.id === params.id);
 
   if (!product) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -34,7 +34,9 @@ export default function ProductPage({ params }: ProductPageProps) {
         <div className="mt-8 lg:mt-0">
           <h1 className="text-5xl font-bold">{product.name}</h1>
           <div className="mt-4">
-            <p className="text-2xl font-semibold">₹ {product.price.toLocaleString()}</p>
+            <p className="text-2xl font-semibold">
+              ₹ {product.price.toLocaleString()}
+            </p>
           </div>
           <div className="mt-6">
             <h3 className="sr-only">Description</h3>
@@ -48,6 +50,5 @@ export default function ProductPage({ params }: ProductPageProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

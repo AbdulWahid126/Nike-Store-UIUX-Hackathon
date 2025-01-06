@@ -39,26 +39,26 @@ export default function HelpPage() {
               Electron, Maestro
             </p>
             <p className="text-[14px] leading-5 mb-3">
-              If you enter your full payment information at checkout, you'll be
+              If you enter your full payment information at checkout, you ll be
               able to use your debit with PayPal or a total credit or debit
               card.
             </p>
             <p className="text-[14px] leading-5 mb-3">Apple Pay</p>
             <p className="text-[14px] leading-5 mb-6">
               Nike Members can store multiple debit or credit cards in their
-              profile for faster checkout. If you're not already a Member, join
+              profile for faster checkout. If you re not already a Member, join
               us today.
             </p>
             <div className="flex gap-2 mb-12">
               <Link
                 href="#"
-                className="inline-flex h-[40px] px-6 items-center justify-center text-[14px] font-bold border rounded-3xl border-black hover:bg-black hover:text-white transition-colors"
+                className="inline-flex h-[40px] px-6 items-center justify-center text-[14px] font-bold hover:border rounded-3xl hover:border-black bg-black text-white hover:text-black hover:bg-white transition-colors"
               >
                 JOIN US
               </Link>
               <Link
                 href="#"
-                className="inline-flex h-[40px] px-6 items-center justify-center text-[14px] font-bold border rounded-3xl border-black hover:bg-black hover:text-white transition-colors"
+                className="inline-flex h-[40px] px-6 items-center justify-center text-[14px] font-bold hover:border rounded-3xl hover:border-black bg-black text-white hover:text-black hover:bg-white transition-colors"
               >
                 SHOP NOW
               </Link>
@@ -88,7 +88,7 @@ export default function HelpPage() {
                     Can I pay for my order with multiple payment methods?
                   </h4>
                   <p className="text-[14px] leading-5 text-gray-600">
-                    No, payment for Nike orders can't be split between multiple
+                    No, payment for Nike orders cant be split between multiple
                     payment methods.
                   </p>
                 </div>
@@ -103,14 +103,14 @@ export default function HelpPage() {
                 </div>
                 <div className="border-t border-gray-200 pt-4">
                   <h4 className="text-[14px] font-bold mb-2">
-                    Why don't I see Apple Pay as an option?
+                    Why dont I see Apple Pay as an option?
                   </h4>
                   <p className="text-[14px] leading-5 text-gray-600">
                     To see Apple Pay as an option in the Nike App or on
-                    Nike.com, you'll need to use a compatible Apple device
+                    Nike.com, youll need to use a compatible Apple device
                     running the latest OS. You must be signed in to your Apple
                     ID and have a supported credit card in your Wallet.
-                    Additionally, you'll need to use Safari to use Apple Pay on
+                    Additionally, youll need to use Safari to use Apple Pay on
                     Nike.com.
                   </p>
                 </div>
@@ -118,7 +118,7 @@ export default function HelpPage() {
                   <h4 className="text-[14px] font-bold mb-2">RELATED</h4>
                   <div className="flex gap-4 mt-2">
                     <Link href="#" className="text-[14px] underline">
-                      WHAT ARE NIKE'S DELIVERY OPTIONS?
+                      WHAT ARE NIKES DELIVERY OPTIONS?
                     </Link>
                     <Link href="#" className="text-[14px] underline">
                       HOW DO I GET FREE DELIVERY ON NIKE ORDERS?
@@ -130,15 +130,15 @@ export default function HelpPage() {
           </div>
 
           {/* Right Column */}
-          <div className="space-y-6">
+          <div className="space-y-6 pl-6 border-l border-gray-200">
             {/* Contact Us */}
             <div className="space-y-6">
-              <div className="p-6 border border-gray-200">
+              <div className="p-6 border-b">
                 <div className="flex items-start gap-3 mb-4">
                   <div className="mt-1">
                     <Phone className="h-6 w-6" />
                   </div>
-                  <h3 className="text-[16px] font-bold">CONTACT US</h3>
+                  <h1 className="text-[16px] font-bold">CONTACT US</h1>
                 </div>
                 <p className="text-[16px] font-bold mb-1">000 020 510 0500</p>
                 <p className="text-[14px] leading-5 mb-1">
@@ -152,7 +152,7 @@ export default function HelpPage() {
               </div>
 
               {/* Chat With Us */}
-              <div className="p-6 border border-gray-200">
+              <div className="p-6 border-b border-gray-200">
                 <div className="flex items-start gap-3 mb-4">
                   <div className="mt-1">
                     <MessageCircle className="h-6 w-6" />
@@ -162,12 +162,12 @@ export default function HelpPage() {
                     <p className="text-[14px] leading-5">7 days a week</p>
                   </div>
                 </div>
-                <p className="text-[14px] leading-5">We'll reply within</p>
+                <p className="text-[14px] leading-5">Well reply within</p>
                 <p className="text-[14px] leading-5">five business days</p>
               </div>
 
               {/* Store Locator */}
-              <div className="p-6 border border-gray-200">
+              <div className="p-6 border-b border-gray-200">
                 <div className="flex items-start gap-3 mb-4">
                   <div className="mt-1">
                     <MapPin className="h-6 w-6" />
