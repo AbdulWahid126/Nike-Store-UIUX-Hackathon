@@ -1,6 +1,9 @@
 import Link from "next/link";
-import { Search, Heart, ShoppingBag } from "lucide-react";
+import { Menu, Search, Heart, ShoppingBag } from "lucide-react";
 import Image from "next/image";
+
+import { Button } from "./ui/button";
+import { Sheet, SheetTrigger, SheetContent } from "./ui/sheet";
 
 export default function Header() {
   return (
@@ -23,7 +26,7 @@ export default function Header() {
           Skip to main content
         </Link>
         <div className="flex items-center space-x-4">
-          <Link href="/products" className="text-black hover:text-gray-900">
+          <Link href="/storeLocator" className="text-black hover:text-gray-900">
             Find a Store
           </Link>
           <span className="text-gray-300">|</span>
@@ -41,8 +44,8 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Main header */}
-      <div className="flex items-center justify-between px-12 py-3">
+      {/* Main header container */}
+      <div className="flex items-center justify-between px-4 md:px-12 py-3">
         <div className="flex items-center space-x-4">
           <Link href="/" className="flex-shrink-0">
             <Image
@@ -110,7 +113,7 @@ export default function Header() {
         </nav>
 
         {/* Right icons */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2">
           <div className="relative hidden md:block">
             <input
               type="search"
@@ -135,6 +138,57 @@ export default function Header() {
               <ShoppingBag className="h-5 w-5" />
             </Link>
           </button>
+
+          {/* Main header */}
+      <div className="flex h-16 items-center justify-between md:hidden">
+        <div className="flex items-center">
+          {/* Mobile menu */}
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className=" md:hidden">
+                <Menu className="h-8 w-8" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-80">
+              <nav className="flex flex-col gap-4">
+                <Link href="/products" className="text-lg font-medium">
+                  New & Featured
+                </Link>
+                <Link href="/men" className="text-lg font-medium">
+                  Men
+                </Link>
+                <Link href="/women" className="text-lg font-medium">
+                  Women
+                </Link>
+                <Link href="/kids" className="text-lg font-medium">
+                  Kids
+                </Link>
+                <Link href="/sale" className="text-lg font-medium">
+                  Sale
+                </Link>
+                <Link href="/snkrs" className="text-lg font-medium">
+                  SNKRS
+                </Link>
+                <div className="mt-4 space-y-2 border-t pt-4">
+                  <Link href="/storeLocator" className="block">
+                    Find a Store
+                  </Link>
+                  <Link href="/help" className="block">
+                    Help
+                  </Link>
+                  <Link href="/join" className="block">
+                    Join Us
+                  </Link>
+                  <Link href="/signIn" className="block">
+                    Sign In
+                  </Link>
+                </div>
+              </nav>
+            </SheetContent>
+          </Sheet>
+          </div>
+          </div>
         </div>
       </div>
     </header>
